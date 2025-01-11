@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <link rel="icon" href="imagenes/logo.png" type="image/png" sizes="32x32">
+        <link rel="icon" href="imagenes/logo.png" type="image/png" sizes="16x16">
+        <title>SAO-Project Multiaudio</title>
+    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAO-Project Multiaudio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Cabecera con logo -->
+<header id="header">
+    <div class="header-content">
+        <h1>SAO proyecto Multiaudio</h1>
+        <p>Somos una comunidad encargada de recopilar Sword Art Online en todos los idiomas del mundo.</p>
+    </div>
+    <img src="imagenes/Portada_kirito.webp" alt="SAO Proyect Logo" id="logo" loading="lazy">
+</header>
+<!-- Enlace a la hoja de estilos (modo claro por defecto) -->
+<link id="theme-stylesheet" rel="stylesheet" href="style.css">
+
+<!-- Botón de Modo Claro/Oscuro -->
+<button id="theme-toggle" aria-label="Cambiar modo" title="Cambiar modo" onclick="toggleTheme()">
+    🌙
+</button>
+
+<script>
+    // Función que cambia entre modo claro y oscuro
+    function toggleTheme() {
+        var themeStylesheet = document.getElementById("theme-stylesheet");
+        
+        // Verificar el archivo de estilo actual
+        if (themeStylesheet.getAttribute("href") === "style.css") {
+            // Cambiar al modo oscuro
+            themeStylesheet.setAttribute("href", "style-dark.css");
+            document.getElementById("theme-toggle").innerHTML = "🌞";  // Cambiar el ícono a sol
+        } else {
+            // Cambiar al modo claro
+            themeStylesheet.setAttribute("href", "style.css");
+            document.getElementById("theme-toggle").innerHTML = "🌙";  // Cambiar el ícono a luna
+        }
+    }
+</script>
+  <!-- Contenedor para el botón flotante -->
+  <div class="button-container">
+    <!-- Botón para iniciar música -->
+    <button id="play-sound" onclick="playSound()"></button>
+</div>
+
+<!-- Reproductor de audio -->
+<audio id="background-audio" loop>
+    <source src="soundtrack/Welcome to This World.m4a" type="audio/mpeg">
+    Tu navegador no soporta la etiqueta de audio.
+</audio>
+
+<script>
+    function playSound() {
+        var audioElement = document.getElementById('background-audio');
+        audioElement.play();  // Reproduce el audio tras la interacción del usuario
+
+        // Efecto de cristales rotos (simulado por animación)
+        var button = document.getElementById('play-sound');
+        button.classList.add('crash');
+        setTimeout(() => {
+            button.classList.remove('crash');
+        }, 1000); // El efecto dura 1 segundo
+    }
+</script>
+<!-- Sección de Botones con las temporadas -->
+<section id="seasons">
+
+    <!-- Temporada 1 -->
+    <div class="season-button" id="season1">
+        <h3>Temporada 1</h3>
+        <p>Una nueva tecnologia de realidad virtual a sido desarrollada!, uneté a una aventura épica en el nuevo mundo de SAO.</p>
+        <img src="imagenes/temporada_1.webp" alt="Temporada 1" class="season-image" loading="lazy">
+    </div>
+
+    <div class="season-button" id="season2">
+        <h3>Temporada 2</h3>
+        <p>¡Un asesino virtual!, La batalla por la supervivencia continúa!</p>
+        <img src="imagenes/temporada_2.jpg" alt="Temporada 2" class="season-image" loading="lazy">
+    </div>
+
+    <div class="season-button" id="season3">
+        <h3>Temporada 3</h3>
+        <p>Una nueva tecnología que traduce almas espera a Kirito, llevándolo a desafíos sin precedentes.</p>
+        <img src="imagenes/temporada_3.webp" alt="Temporada 3" class="season-image" loading="lazy">
+    </div>
+
+    <div class="season-button" id="season4">
+        <h3>Temporada 4</h3>
+        <p>La batalla final y el destino de Kirito y Asuna por el bien de la Inteligencia Artificial</p>
+        <img src="imagenes/temporada_4.webp" alt="Temporada 4" class="season-image" loading="lazy">
+    </div>
+
+    <!-- OVA y Películas -->
+    <div class="season-button" id="ova">
+        <h3>OVA Extra Edición</h3>
+        <p>Disfruta de los episodios especiales de SAO.</p>
+        <img src="imagenes/Extra_Edition.jpg" alt="OVA" class="season-image" loading="lazy">
+    </div>
+
+    <div class="season-button" id="movie1">
+        <h3>Película: Ordinal Scale</h3>
+        <p>¡Una nueva aventura en el mundo real con tecnología AR!</p>
+        <img src="imagenes/Ordinal_Scale.webp" alt="Ordinal Scale" class="season-image" loading="lazy">
+    </div>
+
+    <div class="season-button" id="movie2">
+        <h3>Película: Aria of Starless Night</h3>
+        <p>Una mirada al pasado de Kirito y Asuna.</p>
+        <img src="imagenes/Aria of Starless Night.webp" alt="Aria of Starless Night" class="season-image" loading="lazy">
+    </div>
+
+    <div class="season-button" id="movie3">
+        <h3>Película: Scherzo of Deep Night</h3>
+        <p>Una nueva amenaza aparece para nuestros héroes.</p>
+        <img src="imagenes/Scherzo of Deep Night.jpg" alt="Scherzo of Deep Night" class="season-image" loading="lazy">
+    </div>
+</section>
+
+<!-- Enlace a redes sociales (Telegram) -->
+<section id="social-media">
+    <h3>¡Únete a nuestro canal de Telegram!</h3>
+    <a href="https://t.me/Sword_art_online_Multilenguajes" target="_blank" class="telegram-button">
+        <!-- La imagen ahora es el fondo, no se necesita más en el HTML -->
+    </a>
+</section>
+
+<!-- Botón flotante con descripción expandible -->
+<div id="floating-btn">
+    <div id="floating-btn-text">
+        <p>¡Conoce más sobre el proyecto!</p>
+    </div>
+    <div id="expanded-description">
+        <h3>Acerca de SAO-Project Multiaudio</h3>
+        <p>Somos una comunidad que hace más accesible Sword Art Online, ofreciendo el anime en tu idioma nativo para una experiencia más agradable al oído.</p>
+        <img src="imagenes/SAO-PROJECT.png" alt="Slogan SAO Proyect" id="sao-slogan">
+    </div>
+</div>
+
+<!-- Pie de página -->
+<footer id="footer">
+    <p>© 2025 SAO Proyect Multiaudio. Todos los derechos reservados.</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+    // Método 2: Redirección con JavaScript al hacer clic en la temporada 1
+    document.getElementById("season1").addEventListener("click", function() {
+        window.open("https://drive.google.com/drive/folders/1AXAGZLSPr6yJpnDsJrSsiVxxt7wuhth1?usp=drive_link", "_blank");
+    });
+</script>
+<script src="modo-claro-oscuro.js"></script>
+<script src="interacciones.js"></script>
+<script src="js/audio-control.js"></script>
+<script src="path/to/soundEffect.js"></script>
+</body>
+</html>

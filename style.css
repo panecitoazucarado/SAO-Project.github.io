@@ -1,0 +1,584 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f4f5f6, #484a4e); /* Fondo degradado */
+    color: #ECF0F1; /* Color de texto claro */
+    line-height: 1.6;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/* Cabecera */
+header {
+    background: rgba(0, 0, 0, 0.8); /* Fondo oscuro transparente */
+    color: #fff;
+    padding: 40px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra más suave */
+    position: relative;
+    z-index: 10;
+    border-bottom: 3px solid #4C9BFB; /* Línea de acento azul */
+}
+
+h1 {
+    font-size: 50px;
+    margin: 20px 0;
+    font-weight: 700;
+    color: #4C9BFB; /* Azul espacial */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+p {
+    font-size: 18px;
+    color: #BDC3C7;
+    margin-bottom: 30px;
+}
+
+/* Estilo de enlaces */
+a {
+    color: #4C9BFB;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #FF7043;
+    text-decoration: underline;
+}
+
+/* Sección de temporadas */
+#seasons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    margin-top: 40px;
+    position: relative;
+}
+
+/* Tarjetas */
+.season-button {
+    background: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
+    padding: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Sombra elegante */
+    transition: transform 0.4s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    color: #ECF0F1;
+}
+
+.season-button:hover {
+    transform: translateY(-5px) scale(1.03); /* Sutil efecto flotante */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Título y descripción */
+.season-button h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #4C9BFB;
+}
+
+.season-button p {
+    font-size: 16px;
+    color: #BDC3C7;
+    margin-bottom: 15px;
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Imagen */
+.season-button .season-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.season-button:hover .season-image {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.season-button:hover p {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px auto;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Botones generales */
+button {
+    background: linear-gradient(45deg, #4C9BFB, #FF7043); /* Degradado dinámico */
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #FF7043, #4C9BFB); /* Cambia el degradado */
+    transform: translateY(-3px) scale(1.05); /* Efecto flotante */
+}
+
+/* Footer */
+footer {
+    background-color: #1A252F;
+    color: #BDC3C7;
+    padding: 20px 0;
+    font-size: 14px;
+    border-top: 3px solid #4C9BFB;
+    position: relative;
+    z-index: 10;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Estilo general para el botón de Telegram */
+.telegram-button {
+    display: inline-block;
+    width: 250px; /* Ancho fijo del botón */
+    height: 70px; /* Alto fijo del botón */
+    border-radius: 50px; /* Bordes redondeados para un botón suave */
+    background-image: url('imagenes/telegram.png'); /* Usamos la imagen como fondo */
+    background-size: cover; /* Hace que la imagen cubra todo el espacio del botón */
+    background-position: center; /* Centra la imagen dentro del botón */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); /* Sombra para el efecto flotante */
+    transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+/* Efecto cuando el mouse pasa sobre el botón */
+.telegram-button:hover {
+    background-color: rgba(0, 0, 0, 0.3); /* Color oscuro sobre la imagen al pasar el mouse */
+    transform: translateY(-10px); /* Levanta el botón un poco */
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}
+
+/* Agregar una capa de opacidad sobre la imagen cuando se pasa el ratón */
+.telegram-button:hover {
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo oscuro semitransparente */
+}
+
+/* Estilo para el texto o el área dentro del botón */
+.telegram-button h3 {
+    color: white; /* Cambiar el color del texto si es necesario */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el texto dentro del botón */
+    font-size: 18px;
+    font-weight: bold;
+}
+/* -------------------------------------------------------------------------------*/
+/* Estilo para el botón de modo claro/oscuro */
+#theme-toggle {
+    background-color: #2e3b4e; /* Color de fondo más suave */
+    border: 2px solid #2e3b4e; /* Borde que combine */
+    border-radius: 8px; /* Bordes más redondeados pero no tan ovalados */
+    padding: 10px 16px; /* Un tamaño más equilibrado */
+    cursor: pointer;
+    font-size: 1.4rem; /* Tamaño del ícono adecuado */
+    color: #fff; /* Texto en blanco para mejor contraste */
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    outline: none;
+    position: fixed; /* Fijamos el botón */
+    top: 20px; /* Lo colocamos un poco hacia abajo desde la parte superior */
+    right: 20px; /* Lo alineamos hacia la derecha */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    text-align: center; /* Alineamos el texto en el centro */
+}
+
+/* Estilo de hover para el botón */
+#theme-toggle:hover {
+    background-color: #4a6177; /* Fondo más claro para el hover */
+    border-color: #4a6177; /* Borde más claro */
+    transform: scale(1.05); /* Agranda el botón ligeramente al pasar el ratón */
+}
+
+/* Estilo cuando se hace clic en el botón */
+#theme-toggle:active {
+    background-color: #1f2c3a; /* Fondo más oscuro para el clic */
+    border-color: #1f2c3a; /* Borde más oscuro */
+    transform: scale(1); /* Vuelve al tamaño original al hacer clic */
+}
+
+/* Estilo para el modo oscuro */
+body.dark-mode #theme-toggle {
+    background-color: #3b4a5a; /* Fondo oscuro */
+    color: #f0f0f0; /* Texto claro */
+    border-color: #3b4a5a; /* Borde oscuro */
+}
+
+/* Estilo hover en modo oscuro */
+body.dark-mode #theme-toggle:hover {
+    background-color: #596c7b; /* Fondo más claro en modo oscuro */
+    border-color: #596c7b; /* Borde más claro */
+}
+
+/* Ajuste de la cabecera */
+header {
+    padding-bottom: 30px; /* Espacio adicional para evitar que el botón choque con la cabecera */
+}
+
+/* Transición suave para el cambio de tema */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos para el modo oscuro */
+body.dark-mode {
+    background-color: #121212;  /* Fondo oscuro */
+    color: #e0e0e0;  /* Texto claro */
+}
+
+/* Asegura que otros elementos también cambien de color */
+body.dark-mode header {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode #theme-toggle {
+    background-color: #444;
+    color: #fff;
+    border-color: #444;
+}
+
+body.dark-mode #theme-toggle:hover {
+    background-color: #666;
+    border-color: #666;
+}
+
+/* Cabecera con imagen de fondo */
+#header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Ajusta la altura según lo que necesites */
+    background-color: rgba(0, 0, 0, 0.5); /* Un color oscuro semi-transparente sobre la imagen */
+    border-radius: 15px; /* Bordes redondeados para un aspecto suave */
+    overflow: hidden; /* Esconde cualquier cosa que se desborde */
+}
+
+/* Imagen de fondo en la cabecera */
+#header img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px); /* Difumina la imagen para dar un efecto suave */
+    opacity: 0.7; /* Da opacidad para que no opaque completamente el texto */
+}
+
+/* Contenido sobre la imagen */
+.header-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff; /* Color blanco para el texto */
+    padding: 20px;
+    backdrop-filter: blur(10px); /* Crea un desenfoque suave detrás del texto */
+    border-radius: 15px; /* Bordes redondeados para el bloque de texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el contenido */
+}
+
+/* Título principal */
+#header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Descripción bajo el título */
+#header p {
+    font-size: 18px;
+    margin: 0;
+    opacity: 0.8; /* Opacidad suave para la descripción */
+}
+/* 000000000000100110010201021000ffffff0f*/
+/* Estilo para el botón flotante */
+#floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #14595a; /* Color de fondo del botón */
+    color: white;
+    border-radius: 50px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#floating-btn:hover {
+    transform: scale(1.1);
+}
+
+#floating-btn-text p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Estilo para la descripción expandible */
+#expanded-description {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+#expanded-description img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Efecto para mostrar la descripción */
+#floating-btn.expanded #expanded-description {
+    display: block;
+}
+
+/* Slogan del logo del proyecto */
+#sao-slogan {
+    margin-top: 15px;
+    width: 80%;
+    max-width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+/* Estilo para el botón flotante */
+#floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#floating-btn:hover {
+    transform: translateY(-3px);
+    background-color: #0056b3;
+}
+
+#floating-btn-text p {
+    margin: 0;
+}
+
+/* Estilo para la descripción expandible */
+#expanded-description {
+    display: none;
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    background-color: #ffffff;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-width: 80vw;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    z-index: 9998;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Título de la descripción */
+#expanded-description h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+/* Imagen del slogan */
+#sao-slogan {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+/* Hacer que la descripción sea visible cuando el botón esté activado */
+#floating-btn.active + #expanded-description {
+    display: block;
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+/* Hacerlo responsive */
+@media (max-width: 600px) {
+    #floating-btn {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+
+    #expanded-description {
+        width: 90vw;
+        font-size: 14px;
+    }
+}
+
+/* Estilos generales para la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    overflow-y: scroll; /* Asegura que el desplazamiento sea posible */
+}
+
+/* Estilos generales para la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    overflow-y: scroll; /* Asegura que el desplazamiento sea posible */
+}
+
+/* Estilos para el contenedor del botón flotante */
+.button-container {
+    position: fixed;
+    bottom: 30px; /* Alineación con la parte inferior */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* Estilo del botón flotante (imagen como fondo) */
+#play-sound {
+    width: 200px; /* Ajusta el tamaño del botón */
+    height: 60px; /* Ajusta el tamaño del botón */
+    background-image: url('buttons/link-star.jpeg'); /* Imagen de fondo */
+    background-size: cover; /* La imagen cubre todo el botón */
+    background-position: center; /* Centrar la imagen */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Efecto hover (cuando el mouse pasa sobre el botón) */
+#play-sound:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05); /* Efecto de aumento */
+}
+
+/* Efecto al hacer clic (presionar el botón) */
+#play-sound:active {
+    transform: translateY(4px); /* Desplazamiento hacia abajo para simular presionar */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Foco del botón */
+#play-sound:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(227, 244, 244, 0.8); /* Resaltar con un brillo cian */
+}
+
+/* Efecto de desvanecimiento (explosión suave) */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+/* Efecto de partículas (simulación de explosión de cristales) */
+@keyframes particleEffect {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translate(-30%, -80%) scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2);
+    }
+}
+
+/* Activación de la explosión de cristales */
+.crash {
+    animation: fadeOut 1s ease-out forwards, particleEffect 1s ease-out forwards;
+    position: relative;
+}
+
+/* Estilo de partículas en el botón (sin imagen, usando efectos CSS) */
+.crash::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(0, 255, 255, 0) 70%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: particleEffect 1s ease-out forwards;
+    pointer-events: none;
+    z-index: 3;
+}
