@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba Plyr.io - Cambio de Audio</title>
+  <!-- Incluimos el CDN de Plyr.io -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.2/dist/plyr.css" />
+  <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.2/dist/plyr.min.js"></script>
+</head>
+<body>
+
+  <h1>Reproductor de Video con Plyr.io y Cambio de Audio</h1>
+
+  <!-- Reproductor de video -->
+  <video id="player" controls>
+    <!-- Enlace de Google Drive con export=download para obtener el video -->
+    <source src="https://drive.google.com/uc?export=download&id=1LbqK1OvCYAeHaSOqGHFhDciPfETNgJkb" type="video/mp4" />
+    <track kind="subtitles" label="Español" src="subtitulos_es.vtt" default />
+    <track kind="subtitles" label="Inglés" src="subtitulos_en.vtt" />
+    <track kind="audio" label="Español" src="audio_es.m4a" />
+    <track kind="audio" label="Inglés" src="audio_en.m4a" />
+  </video>
+
+  <script>
+    // Inicializamos el reproductor Plyr
+    const player = new Plyr('#player', {
+      controls: ['play', 'pause', 'progress', 'current-time', 'mute', 'volume', 'fullscreen', 'settings'],
+      settings: ['captions', 'quality', 'speed', 'audio']  // Añadimos la opción para cambiar el audio
+    });
+  </script>
+
+</body>
+</html>
