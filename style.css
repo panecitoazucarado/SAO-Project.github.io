@@ -722,3 +722,13 @@ body {
 .note-signature:hover {
     color: #ffb0b0;
 }
+/* Estilo para el botón antes de desaparecer */
+#play-sound {
+    transition: opacity 1s ease-out; /* Transición suave */
+}
+
+/* Estilo para cuando el botón desaparezca */
+#play-sound.fade-out {
+    opacity: 0; /* El botón se desvanece */
+    pointer-events: none; /* Prevenir interacciones mientras se desvanece */
+}

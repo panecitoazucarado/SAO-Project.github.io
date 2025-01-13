@@ -46,8 +46,8 @@
         }
     }
 </script>
-  <!-- Contenedor para el botón flotante -->
-  <div class="button-container">
+<!-- Contenedor para el botón flotante -->
+<div class="button-container">
     <!-- Botón para iniciar música -->
     <button id="play-sound" onclick="playSound()"></button>
 </div>
@@ -71,6 +71,7 @@
         }, 1000); // El efecto dura 1 segundo
     }
 </script>
+
 <!-- Sección de Botones con las temporadas -->
 <section id="seasons">
 
@@ -123,6 +124,55 @@
         <p>Una nueva amenaza aparece para nuestros héroes.</p>
         <img src="imagenes/Scherzo of Deep Night.jpg" alt="Scherzo of Deep Night" class="season-image" loading="lazy">
     </div>
+
+    <div class="season-button" id="season5">
+        <h3>Sword Art Online Alternative: Gun Gale Online</h3>
+        <p>
+            En este emocionante spin-off de SAO, sumérgete en Gun Gale Online, un juego de disparos donde la estrategia y la precisión son clave. 
+            Sigue a Karen, una jugadora novata con un avatar inesperadamente adorable, mientras busca su lugar en este mundo virtual lleno de acción.
+        </p>
+        <img src="imagenes/Temporada_5.jpg" alt="Gun Gale Online Temporada 1" class="season-image" loading="lazy">
+    </div>
+    
+    <div class="season-button" id="season6">
+        <h3>Sword Art Online Alternative: Gun Gale Online II</h3>
+        <p>
+            La aventura continúa en Gun Gale Online con nuevos desafíos y rivales. Karen y sus aliados enfrentan misiones intensas en un torneo lleno de emociones, 
+            probando sus habilidades en este mundo de realidad virtual donde el más astuto sobrevive.
+        </p>
+        <img src="imagenes/Temporada_6.jpg" alt="Gun Gale Online Temporada 2" class="season-image" loading="lazy">
+    </div>
+
+    <div class="season-button" id="offline1">
+        <h3>Sword Art Offline</h3>
+        <p>El primer especial hilarante que complementa la temporada original de Sword Art Online. ¡Risas garantizadas!</p>
+        <img src="imagenes/sword_art_offline_1.webp" alt="Sword Art Offline" class="season-image" loading="lazy">
+    </div>
+    
+    <div class="season-button" id="offline2">
+        <h3>Sword Art Offline: Extra Edition</h3>
+        <p>¡Disfruta del episodio especial de Sword Art Offline que complementa Extra Edition! Un vistazo divertido detrás de la acción.</p>
+        <img src="imagenes/sword_art_offline_extra_edition.webp" alt="Sword Art Offline: Extra Edition" class="season-image" loading="lazy">
+    </div>
+    
+    <div class="season-button" id="offline3">
+        <h3>Sword Art Offline II</h3>
+        <p>Una nueva dosis de risas y momentos icónicos que acompañan a Sword Art Online II. ¡Explora los secretos del elenco!</p>
+        <img src="imagenes/Sword_Art_Offline_II.webp" alt="Sword Art Offline II" class="season-image" loading="lazy">
+    </div>
+    
+    <div class="season-button" id="offline4">
+        <h3>Sword Art Offline ―Ordinal Scale―</h3>
+        <p>La película *Ordinal Scale* trae consigo momentos épicos y este especial hilarante que no te puedes perder.</p>
+        <img src="imagenes/sword_art_offline_ordinal_scale.webp" alt="Sword Art Offline ―Ordinal Scale―" class="season-image" loading="lazy">
+    </div>
+    
+    <div class="season-button" id="offline5">
+        <h3>Sword Art Offline: Alicization</h3>
+        <p>Un divertido especial que complementa las aventuras de Alicization. ¡Descubre momentos inéditos del elenco!</p>
+        <img src="imagenes/sword_art_offline_alicization.jpg" alt="Sword Art Offline: Alicization" class="season-image" loading="lazy">
+    </div>
+
 </section>
 
 <!-- Enlace a redes sociales (Telegram) -->
@@ -163,19 +213,24 @@
 <script src="script.js"></script>
 
 <script>
-    // Método 2: Redirección con JavaScript al hacer clic en la temporada 1
+    // Método 2: Redirección con JavaScript al hacer clic en las temporadas
     document.getElementById("season1").addEventListener("click", function() {
         window.open("https://drive.google.com/drive/folders/1AXAGZLSPr6yJpnDsJrSsiVxxt7wuhth1?usp=drive_link", "_blank");
     });
     document.getElementById("season2").addEventListener("click", function() {
         window.open("https://drive.google.com/drive/folders/12EgMnNS6UbqPjTPKKUEeeU0m_MiRUpkB?usp=drive_link", "_blank");
     });
+    document.getElementById("season3").addEventListener("click", function() {
+        window.open("https://drive.google.com/drive/folders/1N2XkG7kMVMtPSb8Xx9C-VBMcQCUlNYnw?usp=drive_link", "_blank");
+    });
 </script>
+<!-- Conectar el archivo JavaScript -->
+<script src="hide-button-once-clicked.js"></script>
 <script src="modo-claro-oscuro.js"></script>
 <script src="interacciones.js"></script>
 <script src="js/audio-control.js"></script>
 <script src="path/to/soundEffect.js"></script>
 <script src="floating-note.js"></script>
-
+<script src="drag-button.js"></script>
 </body>
 </html>
