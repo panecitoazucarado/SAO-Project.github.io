@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <link rel="icon" href="imagenes/logo.png" type="image/png" sizes="32x32">
-        <link rel="icon" href="imagenes/logo.png" type="image/png" sizes="16x16">
-        <title>SAO-Project Multiaudio</title>
-    </head>
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Explora Sword Art Online con audio en varios idiomas. Únete a nuestra comunidad de SAO Multiaudio para una experiencia única.">
+    <meta name="keywords" content="Sword Art Online,SAO-PROJECT, SAO, anime, multiaudio, temporadas, comunidad, subtítulos">
+    <meta name="author" content="SAO-Project Multiaudio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAO-Project Multiaudio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" id="theme-stylesheet">
+    <link rel="icon" href="imagenes/logo.png" type="image/png" sizes="32x32">
+    <link rel="preload" as="audio" href="soundtrack/Welcome to This World.m4a">
 </head>
 <body>
 
 <!-- Cabecera con logo -->
 <header id="header">
     <div class="header-content">
-        <h1>SAO proyecto Multiaudio</h1>
+        <h1>SAO Proyecto Multiaudio</h1>
         <p>Somos una comunidad encargada de recopilar Sword Art Online en todos los idiomas del mundo.</p>
     </div>
-    <img src="imagenes/Portada_kirito.webp" alt="SAO Proyect Logo" id="logo" loading="lazy">
+    <img src="imagenes/Portada_kirito.webp" alt="SAO Project Logo" id="logo" loading="lazy">
 </header>
+
 <!-- Enlace a la hoja de estilos (modo claro por defecto) -->
 <link id="theme-stylesheet" rel="stylesheet" href="style.css">
 
@@ -30,21 +31,32 @@
 </button>
 
 <script>
-    // Función que cambia entre modo claro y oscuro
-    function toggleTheme() {
-        var themeStylesheet = document.getElementById("theme-stylesheet");
-        
-        // Verificar el archivo de estilo actual
-        if (themeStylesheet.getAttribute("href") === "style.css") {
-            // Cambiar al modo oscuro
-            themeStylesheet.setAttribute("href", "style-dark.css");
-            document.getElementById("theme-toggle").innerHTML = "🌞";  // Cambiar el ícono a sol
-        } else {
-            // Cambiar al modo claro
-            themeStylesheet.setAttribute("href", "style.css");
-            document.getElementById("theme-toggle").innerHTML = "🌙";  // Cambiar el ícono a luna
-        }
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+        // Referencias a los elementos
+        const themeStylesheet = document.getElementById("theme-stylesheet");
+        const themeToggle = document.getElementById("theme-toggle");
+
+        // Recuperar el tema almacenado o usar "light" por defecto
+        const currentTheme = localStorage.getItem('theme') || 'light';
+
+        // Aplicar el tema inicial
+        themeStylesheet.setAttribute('href', currentTheme === 'dark' ? 'style-dark.css' : 'style.css');
+        themeToggle.innerHTML = currentTheme === 'dark' ? '🌞' : '🌙';
+
+        // Evento para cambiar entre temas
+        themeToggle.addEventListener('click', () => {
+            // Alternar el tema
+            const isDarkMode = themeStylesheet.getAttribute('href') === 'style.css';
+            const newTheme = isDarkMode ? 'dark' : 'light';
+
+            // Cambiar el archivo CSS y el ícono
+            themeStylesheet.setAttribute('href', newTheme === 'dark' ? 'style-dark.css' : 'style.css');
+            themeToggle.innerHTML = newTheme === 'dark' ? '🌞' : '🌙';
+
+            // Guardar la preferencia en localStorage
+            localStorage.setItem('theme', newTheme);
+        });
+    });
 </script>
 <!-- Contenedor para el botón flotante -->
 <div class="button-container">
@@ -198,6 +210,11 @@
 <!-- Pie de página -->
 <footer id="footer">
     <p>© 2025 SAO Project Multiaudio. Todos los derechos reservados.</p>
+    <ul>
+        <li><a href="terms.html">Términos y Condiciones</a></li>
+        <li><a href="privacy.html">Política de Privacidad</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+    </ul>
 </footer>
 
 <!-- Nota flotante -->
@@ -228,6 +245,15 @@
     });
     document.getElementById("ova").addEventListener("click", function() {
         window.open("https://drive.google.com/drive/folders/1-SfR8L2nNt4c0ENnvZ-NS_qHZQc0mPO0?usp=drive_link", "_blank");
+    });
+    document.getElementById("movie1").addEventListener("click", function() {
+        window.open("https://drive.google.com/drive/folders/1Gqx2QNqkyChpreTL7LUY3VfwInXkmB21?usp=drive_link", "_blank");
+    });
+    document.getElementById("movie2").addEventListener("click", function() {
+        window.open("https://drive.google.com/drive/folders/1kkPq_lhC-PEdd5aWHVQ8OTOhjWReR4pC?usp=drive_link", "_blank");
+    });
+    document.getElementById("movie3").addEventListener("click", function() {
+        window.open("https://drive.google.com/drive/folders/1If7nLXtkP5nHWpKJ8LyQtwtnnvXpqtcb?usp=drive_link", "_blank");
     });
 </script>
 <!-- Conectar el archivo JavaScript -->
